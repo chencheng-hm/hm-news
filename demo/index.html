@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <demo :old="old" :name="name"></demo>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+      Vue.component("demo", {
+        template: `
+        <div>
+          我是demo组件--{{msg}}--{{old}}--{{name}}
+        </div>
+      `,
+        // props: ["msg", "old", "name"]
+        props: {
+          msg: {
+            type: Boolean,
+            default: true,
+            required: true
+          },
+          old: Number,
+          name: String
+        }
+      });
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "124",
+          old: 18,
+          name: "张三"
+        }
+      });
+    </script>
+  </body>
+</html>

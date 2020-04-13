@@ -19,12 +19,21 @@
       ref="password"
     ></hm-input>
     <hm-button @click="login">登录</hm-button>
+    <div class="toregister">
+      没有账号去
+      <router-link to="/register">注册</router-link>
+    </div>
   </div>
 </template>
 
 <script>
 // import axios from "axios";
 export default {
+  created() {
+    console.log(this.$route.query);
+    this.username = this.$route.params.username;
+    this.password = this.$route.params.password;
+  },
   methods: {
     login() {
       //登录校验
@@ -68,4 +77,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="less" scoped>
+.login {
+  .toregister {
+    text-align: right;
+    font-size: 15px;
+    padding-right: 20px;
+    a {
+      color: blue;
+    }
+  }
+}
+</style>

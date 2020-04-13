@@ -55,7 +55,7 @@ export default {
 <style lang="less" scoped>
 .hm-input {
   height: 50px;
-  padding: 0 15px;
+  padding: 0 20px;
   input {
     outline: none;
     border: none;

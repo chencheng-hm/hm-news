@@ -19,6 +19,11 @@ import HmInput from "./components/HmInput.vue";
 Vue.prototype.$axios = axios;
 //axios在发送请求时，会自动把baseURL添加到URL前；
 axios.defaults.baseURL = "http://localhost:3000";
+//项目中 vant-ui组件库的引入使用
+import { Button, Field, toast } from "vant";
+Vue.use(toast);
+Vue.use(Button);
+Vue.use(Field);
 Vue.component("hmHeader", hmHeader);
 Vue.component("HmIcon", HmIcon);
 Vue.component("HmButton", HmButton);
